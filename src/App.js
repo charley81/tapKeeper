@@ -1,11 +1,11 @@
-import './App.css'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './app.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navbar from './components/navbar'
-import Home from './pages'
-import About from './pages/about'
-import Contact from './pages/contact'
-import Login from './pages/login'
-import Signup from './pages/signup'
+import HomePage from './pages/'
+import AboutPage from './pages/about'
+import ContactPage from './pages/contact'
+import LoginPage from './pages/login'
+import SignupPage from './pages/signup'
 
 function App() {
   return (
@@ -13,7 +13,11 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/contact" exact component={ContactPage} />
+          <Route path="/login" exact component={LoginPage} />
+          <Route path="/signup" exact component={SignupPage} />
         </Switch>
       </Router>
     </div>
