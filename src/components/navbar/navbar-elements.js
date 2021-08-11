@@ -2,19 +2,27 @@ import { FaBars } from 'react-icons/fa'
 import { NavLink as Link } from 'react-router-dom'
 import styled from '@emotion/styled'
 
-let Nav = styled.nav({
+export const Nav = styled.nav({
   // todo
 })
 
-let NavLink = styled(Link)({
+export const NavLink = styled(Link)({
   // todo
 })
 
-let Bars = styled(FaBars)({
+export const Bars = styled(FaBars)({
   // todo
 })
 
-let NavMenu = styled.div({
+export const NavMenu = styled.div({
+  // todo
+})
+
+export const NavBtn = styled.nav({
+  // todo
+})
+
+export const NavBtnLink = styled(Link)({
   // todo
 })
 
