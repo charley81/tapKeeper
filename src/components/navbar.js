@@ -1,15 +1,46 @@
+/** @jsxImportSource @emotion/react */
+import { css, jsx } from '@emotion/react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { IoMdBeer } from 'react-icons/io'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav>
+    <nav
+      css={css`
+        background: transparent;
+        height: 5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+          display: flex;
+          align-items: center;
+        }
+
+        .logo {
+          color: var(--color-light);
+        }
+
+        .logo-icon {
+          color: var(--colorMid);
+        }
+
+        .nav-link {
+          color: var(--color-light);
+        }
+      `}
+    >
       {/* logo */}
-      <Link to="/">
-        <h3>tapKeeper</h3>
-      </Link>
+      <h3>
+        <Link to="/" className="logo">
+          <IoMdBeer className="logo-icon" />
+          tapKeeper
+        </Link>
+      </h3>
 
       {/* navlinks */}
       <ul className={open ? 'navlinks open' : 'navlinks'}>
