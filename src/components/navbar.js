@@ -25,12 +25,17 @@ export default function Navbar() {
           display: none;
           font-size: 2rem;
           transition: var(--transition);
+          background: transparent;
+          cursor: pointer;
+          border: transparent;
+          color: var(--color-light);
         }
 
         .logo {
           color: var(--color-secondary);
           display: flex;
           align-items: center;
+          font-size: 2rem;
         }
 
         .logo-first-span {
@@ -43,6 +48,7 @@ export default function Navbar() {
 
         .logo-icon {
           color: var(--colorMid);
+          transition: var(--transition);
         }
 
         .nav-links {
@@ -59,6 +65,34 @@ export default function Navbar() {
             color: red;
           }
         }
+
+        @media screen and (max-width: 768px) {
+          position: relative;
+
+          .nav-links {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            text-align: center;
+            width: 50%;
+            top: 10rem;
+            right: -100%;
+            background: var(--color-dark);
+            transition: var(--transition);
+            height: 100vh;
+          }
+
+          .nav-links.open {
+            transition: var(--transition);
+            right: 0;
+          }
+
+          .nav-icon {
+            display: block;
+            color: white;
+            margin-top: 1rem;
+          }
+        }
       `}
     >
       {/* logo */}
@@ -69,6 +103,11 @@ export default function Navbar() {
           <span className="logo-second-span">Keeper</span>
         </Link>
       </h3>
+
+      {/* menu-icons */}
+      <button onClick={() => setOpen(!open)} className="nav-icon">
+        {open ? <FiX /> : <FiMenu />}
+      </button>
 
       {/* navlinks */}
       <ul className={open ? 'nav-links open' : 'nav-links'}>
