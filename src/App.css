@@ -20,6 +20,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.8;
+  background: var(--color-dark);
+  color: var(--color-light);
 }
 
 img {
